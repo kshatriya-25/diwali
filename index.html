@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>A Little Light</title>
+  <meta name="description" content="Someone lit a diya for you. Happy Diwali." />
+  <meta name="theme-color" content="#05040a" />
+  <meta property="og:title" content="Someone lit a diya for you 🪔" />
+  <meta property="og:description" content="Open it, strike the match, and light the diya." />
+  <meta property="og:site_name" content="Tealorca" />
+  <meta name="author" content="Tealorca" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&family=Manrope:wght@400;500;600&family=Noto+Serif+Devanagari:wght@500&family=Noto+Serif+Tamil:wght@500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="/style.css" />
+  <script type="importmap">
+    {
+      "imports": {
+        "three": "https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"
+      }
+    }
+  </script>
+</head>
+<body>
+  <canvas id="c"></canvas>
+
+  <div class="ui">
+    <header class="top">
+      <span lang="hi" class="deva">दीपावली</span>
+      <span class="dot">·</span>
+      <span lang="ta" class="tamil">தீபாவளி</span>
+      <span class="dot">·</span>
+      <span>Deepavali</span>
+    </header>
+
+    <div id="intro" class="intro">
+      <p class="for">a little light for</p>
+      <h1 id="introName"></h1>
+    </div>
+
+    <div id="holdWrap" class="hold-wrap">
+      <p id="hint" class="hint">pick up the match</p>
+    </div>
+
+    <section id="wish" class="wish" aria-live="polite">
+      <div class="scrim"></div>
+      <div class="wish-text">
+        <p class="happy">Happy Diwali</p>
+        <p id="wishLine" class="wish-line"></p>
+        <p id="fromLine" class="from"></p>
+      </div>
+      <div class="actions">
+        <button id="makeBtn" class="btn primary">Light one for someone</button>
+        <button id="replayBtn" class="btn ghost">Again</button>
+      </div>
+    </section>
+    <a class="brand" href="https://tealorca.com/" target="_blank" rel="noopener">
+      crafted with light by <span>Tealorca</span>
+    </a>
+  </div>
+
+  <dialog id="maker" class="maker">
+    <form method="dialog" id="makerForm">
+      <h2>Light a diya for someone</h2>
+      <label>Their name
+        <input id="toInput" maxlength="18" required autocomplete="off" placeholder="Priya" />
+      </label>
+      <label>Your name <span class="opt">(optional)</span>
+        <input id="fromInput" maxlength="24" autocomplete="off" placeholder="Arjun" />
+      </label>
+      <button id="createBtn" class="btn primary" type="button">Create link</button>
+      <div id="linkBox" class="link-box" hidden>
+        <code id="linkOut"></code>
+        <div class="row">
+          <button id="copyBtn" class="btn ghost" type="button">Copy</button>
+          <a id="waBtn" class="btn ghost" target="_blank" rel="noopener">WhatsApp</a>
+          <button id="shareBtn" class="btn ghost" type="button" hidden>Share</button>
+        </div>
+      </div>
+      <button class="close" value="close" aria-label="Close">×</button>
+    </form>
+  </dialog>
+
+  <script type="module" src="/main.js"></script>
+</body>
+</html>

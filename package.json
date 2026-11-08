@@ -1,0 +1,5 @@
+{
+  "name": "diwali-light",
+  "private": true,
+  "scripts": { "dev": "npx -y serve -s . -l 5173" }
+}
